@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;1,100&family=Ubuntu:wght@300&display=swap");
+
+:root {
+  --black: #000;
+  --background: #f5f5f5;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+}
+html {
+  font-size: 100%;
+}
+header {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-self: center;
+}
+.banner {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 1.2vw, 0.975rem);
+  margin-bottom: .2rem;
+}
+.banner a {
+  color: var(--white);
+  font-weight: 600;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  position: relative;
+}
+nav .left-nav {
+  width: 12%;
+}
+nav .left-nav img {
+  width: 100%;
+  height: auto;
+}
+nav .mid-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav .mid-nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+ul li {
+  list-style-type: none;
+  position: relative;
+}
+ul li a {
+  color: var(--black);
+  text-decoration: none;
+  font-size: clamp(0.75rem, 1.6vw, 1.1rem);
+}
+ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--black);
+  transform: translateX(-1px);
+  transition: all 0.2s ease-in;
+}
+ul li a:hover::before {
+  margin-top: 0.2rem;
+  width: 100%;
+  transform: translateX(0);
+}
+nav .right-nav {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+nav .right-nav .search {
+  background-color: var(--background);
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+}
+nav .right-nav .search input {
+  font-size: clamp(0.75rem, 2vw, 0.865rem);
+  width: 12rem;
+  padding: 0.375rem;
+  border-radius: 0.4rem;
+  border: none;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+nav .right-nav .search input:focus {
+  width: 13rem;
+  outline: var(--background);
+}
+nav .right-nav .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+i {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  padding: 0.3rem;
+}
+
+/* 830px */
+
+@media (max-width: 940px) {
+  nav .mid-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--background);
+    padding: 0.5rem 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  nav .mid-nav{
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+  }
+  nav .mid-nav ul{
+    margin: 0 5rem;
+    flex-direction: row;
+    gap: 30%;
+  }
+  nav .mid-nav ul li a {
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    color: var(--black);
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 450px) {
+    nav .left-nav img{
+        width: 5rem;
+    }
+  .ri-heart-3-line,
+  .ri-search-2-line {
+    display: none;
+  }
+  nav .right-nav .search input {
+    width: 10rem;
+  }
+  nav .right-nav .search input:focus {
+    width: 11rem;
+  }
+}
